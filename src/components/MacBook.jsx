@@ -52,15 +52,12 @@ const MacBook = () => {
             </div>
             <img src={currentMb.icon} alt={`Apple ${currentMb.chip} Icon`} className='w-12 h-12 2xl:mb-2 xl:mb-2' />
             <div className='2xl:mb-4 xl:mb-2 text-center md:text-left'>
-            <p className='2xl:text-lg xl:text-base font-semibold text-gray-800 mb-0.5'>
-                8-Core CPU
+                {currentMb.specs.map((spec, index)=>(
+                    <p key={index} className='2xl:text-lg xl:text-base font-semibold text-gray-800 mb-0.5'>
+                {spec}
             </p>
-            <p className='2xl:text-lg xl:text-base font-semibold text-gray-800 mb-0.5'>
-                8-Core CPU
-            </p>
-            <p className='2xl:text-lg xl:text-base font-semibold text-gray-800 mb-0.5'>
-                8-Core CPU
-            </p>
+                ))}
+            
             </div>
             <button type='button' className='w-min text-sm py-1 px-3 bg-blue-400 rounded-full text-white mt-4 md:mt-0'>
             Buy
