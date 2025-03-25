@@ -29,9 +29,11 @@ const IMac = () => {
         </div>
         <div className='absolute md:top-1/2 top-3/4 md:left-4 left-12 transform-translate-y-s1/2 flex flex-col lg:space-y-2 space-y-1 bg-gray-50'>
         {imacModels.map((model, index)=>(
- <div key={index} style={{backgroundColor: model.bg}} className='flex items-center space-x-2'>
-                <button className='2xl:w-8 md:w-5 w-4 2xl:h-8 md:h-5 h-4 rounded-full flex items-center justify-center bg-[#10505b]'/>
-                <span className='text-sm'>Green</span>
+ <div key={index}  className='flex items-center space-x-2'>
+                <button style={{backgroundColor: model.bg}} className={`2xl:w-8 md:w-5 w-4 2xl:h-8 md:h-5 h-4 rounded-full flex items-center justify-center ${selectedColor === model.label.toLowerCase()&& 'border-2 border-blue-500'} `} onClick={()=> {setSelectedColor(model.label.toLowerCase())
+                setVisibleLabel(model.label)
+                }}/>
+                <span className='text-sm'>{model.label}</span>
             </div>
         ))}
            
