@@ -6,6 +6,7 @@ import Iphone from './components/Iphone'
 import MacBook from './components/MacBook'
 import Watch from './components/Watch'
 import IMac from './components/IMac'
+import PageTransition from './components/PageTransition'
 
 
 const App = () => {
@@ -25,11 +26,13 @@ const App = () => {
         <Navbar activePage={activePage} handleNavClick={handleNavClick} />
         <Controls toggleZoom={toggleZoom} frameZoom={frameZoom} />
         <div className='flex-grow'>
-        {/* <Home /> */}
-        {/* <Iphone /> */}
-        {/* <MacBook /> */}
-        {/* <Watch /> */}
+          <PageTransition activePage={activePage}>
+        <Home />
+        <Iphone />
+        <MacBook />
+        <Watch />
         <IMac />
+        </PageTransition>
         </div>
       </div>
     </div>
